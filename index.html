@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profilecuaNhat</title>
+    <!---external css ---->
+    <link rel="stylesheet" href="style.css">
+    <!---font awesome cdn for font icons---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+   <div class="container">
+       <div class="profile-card"> 
+            <div class="profile-pic">
+                <img src="img/avatar.jpg" alt="user avatar">
+            </div>
+
+            <div class="profile-details">
+                 <div class="intro">
+                    <h2>Hoàng Minh Nhật</h2>
+                    <h4>DUT Information Technology Student</h4>
+                    <div class="social">
+                        <a href="#" data-url="https://www.facebook.com/profile.php?id=100017543580353" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook" style="color: var(--blue)"></i>
+                        </a>
+                        <a href="#" data-url="https://github.com/hoangnhata/Nh-t.git" class="social-icon" target="_blank">
+                            <i class="fa-brands fa-github" style="color: var(--skyblue)"></i>
+                        </a>
+                        <a href="#" data-url="https://www.instagram.com/hoangnnhat__/?hl=en" class="social-icon" target="_blank">
+                            <i class="fa-brands fa-instagram" style="color: var(--dark-pink)"></i>
+                        </a>
+                        <a href="#" data-url="https://www.linkedin.com" class="social-icon">
+                            <i class="fab fa-linkedin" style="color: var(--light-blue)"></i>
+                        </a>
+                    </div>
+                 </div>
+
+                 <div class="contact-info">
+                    <div class="row" data-type="phone" data-text="+84363215083">
+                        <div class="icon">
+                            <i class="fa fa-phone" style="color: var(--dark-magenta)"></i>
+                        </div>
+                        <div class="content">
+                            <span>Phone</span>
+                            <h5>+84363215083</h5>
+                        </div>
+                    </div>
+
+                    <div class="row" data-type="email" data-text="nhathoang09122004@gmail.com">
+                        <div class="icon">
+                            <i class="fa fa-envelope-open" style="color: var(--light-green)"></i>
+                        </div>
+                        <div class="content">
+                            <span>Email</span>
+                            <h5>nhathoang09122004@gmail.com</h5>
+                        </div>
+                    </div>
+    
+                    <div class="row" data-type="location" data-text="Nghe An VietNam">
+                        <div class="icon">
+                            <i class="fa fa-map-marker" style="color: var(--light-purple)"></i>
+                        </div>
+                        <div class="content">
+                            <span>Location</span>
+                            <h5>Nghe An VietNam</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+       <div class="about">
+           <h1>About Me</h1>
+
+           <p> I am a third-year student majoring in Vietnam-Japan Information Technology, 
+            and the field I want to pursue in the future is web technology. 
+            I enjoy design and creativity, which is the reason I chose to study this major.
+          </p>
+
+          <p>
+            The goal of web technology is to create dynamic, responsive, and user-friendly websites and web applications that enhance user experience and streamline online interactions. 
+            It involves developing efficient, scalable, and secure platforms that cater to a wide range of industries, from e-commerce to education and beyond.
+          </p>
+          <h2>What I want Do !!!</h2>
+          <div class="work">
+             <div class="workbox">
+                 <div class="icon">
+                    <img src="img/ui.svg" alt="">
+                 </div>
+                 <div class="desc">
+                    <h3>Designer</h3>
+                    <p>A designer is a professional who creates visual, functional, or conceptual designs for various fields.</p>
+                 </div>
+             </div>
+
+            <div class="workbox">
+                <div class="icon">
+                   <img src="img/web.svg" alt="">
+                </div>
+                <div class="desc">
+                   <h3>Web Developement</h3>
+                   <p>Web development refers to the process of building, creating, and maintaining websites and web applications.</p>
+                </div>
+            </div>
+          </div>
+       </div>
+   </div>
+
+   <script>
+       
+       function copyToClipboard(text) {
+           navigator.clipboard.writeText(text)
+               .then(() => {
+                   alert('Copied to clipboard: ' + text);
+               })
+               .catch(err => {
+                   console.error('Failed to copy: ', err);
+               });
+       }
+
+       
+       document.querySelectorAll('.social-icon').forEach(icon => {
+           icon.addEventListener('click', (e) => {
+               e.preventDefault(); 
+               const url = icon.getAttribute('data-url'); 
+               copyToClipboard(url); 
+           });
+       });
+
+       
+       document.querySelectorAll('.contact-info .row').forEach(row => {
+           row.addEventListener('click', () => {
+               const text = row.getAttribute('data-text'); 
+               copyToClipboard(text); 
+           });
+       });
+   </script>
+</body>
+</html>
